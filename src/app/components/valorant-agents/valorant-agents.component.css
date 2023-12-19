@@ -1,0 +1,9 @@
+.accordion-body{
+  background-color: lightgrey;
+}
+.card{
+  margin: 1.5em 0;
+}
+.card:hover{
+  transform: scale(105%);
+}

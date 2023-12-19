@@ -1,0 +1,39 @@
+<h3 class="text-center text-muted m-1">Valorant Agents</h3>
+<div class="row">
+  <div class="col-lg-3" *ngFor="let agent of agents; let i = index">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="text-primary">{{agent.displayName}}</h3>
+        </div>
+      </div>
+      <img [src]="agent.displayIcon" class="card-img-top" alt="">
+      <div class="card-body">
+        <p><strong>Developer Name:</strong> {{agent.developerName}}</p>
+        <p><strong>Role:</strong> {{agent.role?.description}}</p>
+        <p><strong>Description:</strong> {{agent.description}}</p>
+      </div>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" [attr.data-bs-target]="'#miAccordion'+i"
+                    aria-expanded="false" aria-controls="miAccordion">
+              Abilities:
+            </button>
+          </h2>
+          <div [attr.id]="'miAccordion'+i" class="accordion-collapse collapse"
+               data-bs-parent="#accordionExample">
+            <div class="accordion-body" *ngFor="let ability of agent.abilities">
+              <ul>
+                <img [src]="ability.displayIcon" class="card-img-top" alt="">
+                <li class="text-muted small">{{ability.displayName}}</li>
+                <li class="text-muted small">{{ability.description}}</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

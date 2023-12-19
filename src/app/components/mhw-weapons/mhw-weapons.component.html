@@ -1,0 +1,23 @@
+<h3 class="text-center text-muted m-1">MHW Weapons</h3>
+<div class="row">
+  <div class="col-lg-3" *ngFor="let weapon of weapons; let i = index">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="text-primary">{{weapon.name}}</h3>
+        </div>
+      </div>
+      <img [src]="weapon.assets.image" class="card-img-top" alt="">
+      <div class="card-body">
+        <p><strong>Type:</strong> {{weapon.type}}</p>
+        <p><strong>Attack:</strong> {{weapon.attack.display}}</p>
+        <p><strong>Damage Type:</strong> {{weapon.damageType}}</p>
+        <p><strong>Name:</strong> {{weapon.name}}</p>
+        <p *ngFor="let slot of weapon.slots"><strong>Slots:</strong> {{slot.rank}}</p>
+        <p  *ngFor="let element of weapon.elements"><strong>Elements:</strong>
+          {{element.type}}</p>
+        <p><strong>Crafting:</strong> {{weapon.crafting.branches}}</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<h3 class="text-center text-muted m-1">Final Space Characters</h3>
+<div class="row">
+  <div class="col-lg-3" *ngFor="let character of characters; let i = index">
+    <div class="card">
+      <div class="card-header">
+        <div class="card-title">
+          <h3 class="text-primary">{{character.name}}</h3>
+        </div>
+      </div>
+      <img [src]="character.img_url" class="card-img-top" alt="">
+
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button"
+                    data-bs-toggle="collapse" [attr.data-bs-target]="'#miAccordion'+i"
+                    aria-expanded="false" aria-controls="miAccordion">
+              Description:
+            </button>
+          </h2>
+          <div [attr.id]="'miAccordion'+i" class="accordion-collapse collapse"
+               data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="card-body">
+                <p><strong>Name:</strong> {{character.name}}</p>
+                <p><strong>Status:</strong> {{character.status}}</p>
+                <p><strong>Species:</strong> {{character.species}}</p>
+                <p><strong>Gender:</strong> {{character.gender}}</p>
+                <p><strong>Hair:</strong> {{character.hair}}</p>
+                <p><strong>Alias:</strong> {{character.alias}}</p>
+                <p><strong>Origin:</strong> {{character.origin}}</p>
+                <p><strong>Abilities:</strong> {{character.abilities}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+</div>
